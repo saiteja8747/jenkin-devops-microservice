@@ -1,11 +1,11 @@
 //DECLARATIVE
+pipeline{
 	// agent any
-	//agent { docker { image 'node:3.21'} }
+	agent { docker { image 'maven:3.9.11'} }
 	stages {
 		stage('Build') {
 			steps {
 				//sh 'mvn --version'
-				//sh 'node --version'
 				echo "Build"
 				echo "PATH - $PATH"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
@@ -37,4 +37,5 @@
 		failure {
 			echo 'I run when you are successful'	
 		}
-	}				
+	}
+}					
