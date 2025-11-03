@@ -1,4 +1,5 @@
 //DECLARATIVE
+pipeline{
 	// agent any
 	//agent { docker { image 'node:3.21'} }
 	stages {
@@ -37,4 +38,5 @@
 		failure {
 			echo 'I run when you are successful'	
 		}
-	}				
+	}
+}				
